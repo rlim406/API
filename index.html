@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Famous Quotes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div id="quotes-view"></div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+  var category = "movies";
+  var apikey = "q5vSs8GoANmshhwdSSQO7F5Qsv28p1iRFEIjsnUltzSVcbj2hR";
+  var queryURL = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + apikey;
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    $("#quotes-view").text(JSON.stringify(response))
+  })
+
+</script>
